@@ -9,7 +9,6 @@ const theme = {
     info: "#17a2b8",
     light: "#f8f9fa",
     dark: "#343a40",
-    // add more colors as needed
   },
   fonts: {
     body: "Roboto, sans-serif",
