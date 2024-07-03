@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { LogoWrapper } from "components/Header/headerStyles";
+import MockBuddyLogo from "assets/images/mocklogo.svg";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -41,7 +42,8 @@ const Headers = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <LogoWrapper>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+            <img src={MockBuddyLogo} className="header-logo" />
             <Typography
               variant="h6"
               noWrap
@@ -55,6 +57,7 @@ const Headers = () => {
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                fontSize: "1.75rem",
               }}
             >
               MOCKBUDDY
@@ -99,7 +102,8 @@ const Headers = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+
           <Typography
             variant="h5"
             noWrap
@@ -146,7 +150,7 @@ const Headers = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" />
               </IconButton>
             </Tooltip>
             <Menu
