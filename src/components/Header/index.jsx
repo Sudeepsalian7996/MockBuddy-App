@@ -8,14 +8,17 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { LogoWrapper } from "components/Header/headerStyles";
 import MockBuddyLogo from "assets/images/mocklogo.svg";
+import HeaderDropdown from "components/Dropdowns/HeaderDropdown";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [
+  { name: "Interview Types", type: "dropdown" },
+  { name: "Faq", type: "button" },
+  { name: "Feedback", type: "button" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Headers = () => {
@@ -37,13 +40,22 @@ const Headers = () => {
     setAnchorElUser(null);
   };
 
+  const options = [
+    { label: "Item 1", url: "/item1" },
+    { label: "Item 2", url: "/item2" },
+    { label: "Item 3", url: "/item3" },
+  ];
+
+  const handleSelect = (option) => {
+    console.log("Selected Option:", option);
+  };
+
   return (
     <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <LogoWrapper>
-            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-            <img src={MockBuddyLogo} className="header-logo" />
+            <img src={MockBuddyLogo} className="header-logo" alt="logo" />
             <Typography
               variant="h6"
               noWrap
@@ -93,16 +105,26 @@ const Headers = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={page.type === "button" ? handleCloseNavMenu : null}
+                >
                   <Typography textAlign="center" sx={{ color: "black" }}>
-                    {page}
+                    {page.type === "dropdown" ? (
+                      <HeaderDropdown
+                        name={page.name}
+                        items={options}
+                        onSelect={handleSelect}
+                      />
+                    ) : (
+                      page.name
+                    )}
                   </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
 
           <Typography
             variant="h5"
@@ -131,19 +153,23 @@ const Headers = () => {
               gap: "4.5rem",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontSize: "1rem",
-                }}
+            {pages.map((page, index) => (
+              <MenuItem
+                key={index}
+                onClick={page.type === "button" ? handleCloseNavMenu : null}
               >
-                {page}
-              </Button>
+                <Typography textAlign="center" sx={{ color: "black" }}>
+                  {page.type === "dropdown" ? (
+                    <HeaderDropdown
+                      name={page.name}
+                      items={options}
+                      onSelect={handleSelect}
+                    />
+                  ) : (
+                    page.name
+                  )}
+                </Typography>
+              </MenuItem>
             ))}
           </Box>
 
@@ -181,4 +207,5 @@ const Headers = () => {
     </AppBar>
   );
 };
+
 export default Headers;
