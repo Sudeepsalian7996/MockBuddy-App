@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SliderContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 60vh; /* 60% of the viewport height */
   overflow: hidden; /* To ensure no overflow from images */
   .slick-slider {
     height: 100%;
@@ -18,18 +17,34 @@ export const SliderContainer = styled.div`
     align-items: center;
     height: 100%;
   }
+
+  @media (min-width: 900px) {
+    height: 60vh;
+  }
 `;
 
 export const Slide = styled.div`
   display: flex !important;
+  flex-direction: column;
   gap: 3rem;
   align-items: center;
-  height: 60vh;
   width: 100%;
   background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
   background-size: cover;
   background-position: center;
-  padding: 0 5%; /* Add some padding to left and right */
+  padding: 0 5%;
+
+  @media (min-width: 900px) {
+    height: 60vh;
+    flex-direction: row;
+  }
+  @media (max-width: 550px) {
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 550px) and (max-width: 900px) {
+    padding: 3rem;
+  }
 `;
 
 export const ArrowsContainer = styled.div`
@@ -53,8 +68,6 @@ export const CustomArrow = styled.button`
 `;
 
 export const TextCard = styled.div`
-  width: 45%;
-  padding: 5rem;
   .banner-title {
     font-size: 4rem;
     margin-bottom: 1.7rem;
@@ -63,6 +76,55 @@ export const TextCard = styled.div`
   .banner-description {
     font-size: 1.2rem;
     margin-bottom: 1.7rem;
+  }
+
+  @media (min-width: 900px) {
+    width: 45%;
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.7rem;
+
+    .banner-title {
+      margin: 0;
+      font-size: 3rem;
+      text-align:center
+    }
+
+    .banner-description {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    @media (min-width:1275px){
+     padding: 5rem;
+
+     .banner-description {
+      width:80%;
+    }
+    }
+  }
+
+   @media (min-width: 550px) and (max-width: 900px) {
+      padding: 2rem;
+      gap:1.4rem 
+      padding: 0.5rem;
+
+      .banner-description {
+         width: 75%;
+    }
+  }
+
+  @media (min-width:1400px) {
+  .banner-description {
+         width: 80%;
+    }
   }
 `;
 
