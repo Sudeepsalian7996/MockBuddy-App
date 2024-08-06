@@ -4,21 +4,11 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  position: relative;
-  left: 4rem;
+  position: ${({ mobile }) => (!mobile ? "relative" : "")};
+  left: ${({ mobile }) => (!mobile ? "4rem" : "0rem")};
 
   .header-logo {
     width: 3.5rem;
-  }
-
-  @media (max-width: 900px) {
-    left: 0;
-  }
-  @media (max-width: 900px) {
-    display: none;
-    img {
-      display: block;
-    }
   }
 `;
 

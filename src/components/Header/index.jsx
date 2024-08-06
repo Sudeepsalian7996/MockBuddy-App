@@ -53,30 +53,35 @@ const Headers = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <LogoWrapper>
-            <img src={MockBuddyLogo} className="header-logo" alt="logo" />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-                fontSize: "1.75rem",
-              }}
-            >
-              MOCKBUDDY
-            </Typography>
-          </LogoWrapper>
+        <Toolbar
+          disableGutters
+          sx={{ justifyContent: { md: "space-between", xs: "space-between" } }}
+        >
+          {window.screen.width > 900 && (
+            <LogoWrapper>
+              <img src={MockBuddyLogo} className="header-logo" alt="logo" />
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: "1.75rem",
+                }}
+              >
+                MOCKBUDDY
+              </Typography>
+            </LogoWrapper>
+          )}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -125,26 +130,30 @@ const Headers = () => {
               ))}
             </Menu>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-            }}
-          >
-            MOCKBUDDY
-          </Typography>
+          {window.screen.width <= 900 && (
+            <LogoWrapper mobile={true}>
+              <img src={MockBuddyLogo} className="header-logo" alt="logo" />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                  fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                }}
+              >
+                MOCKBUDDY
+              </Typography>
+            </LogoWrapper>
+          )}
           <Box
             sx={{
               flexGrow: 1,
