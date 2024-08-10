@@ -51,7 +51,7 @@ const Headers = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "white", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar
           disableGutters

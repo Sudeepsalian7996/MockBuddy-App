@@ -100,6 +100,7 @@ export const TextCard = styled.div`
     .banner-description {
       font-size: 1rem;
       margin: 0;
+      color: "#4B5563";
     }
 
     @media (min-width:1275px){
@@ -144,9 +145,14 @@ export const PracticeButton = styled.button`
   font-weight: 600;
   background-color: #0176d3;
   border-radius: 0.3rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: background-color 0.5s, cursor 0.5s;
 
+  ${({ section }) =>
+    section === "whyPractice" &&
+    `
+    margin-top: 1.75rem;
+  `}
   &:hover {
     background-color: #11578f;
     cursor: pointer;

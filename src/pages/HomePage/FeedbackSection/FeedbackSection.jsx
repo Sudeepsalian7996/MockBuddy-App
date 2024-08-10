@@ -37,8 +37,11 @@ const FeedbackSection = () => {
   };
 
   return (
-    <Container sx={{ margin: "3rem auto" }}>
-      <Header variant="h5" sx={{ width: "70%", margin: "2rem auto" }}>
+    <Container>
+      <Header
+        variant="h5"
+        sx={{ width: "70%", margin: "2rem auto", fontSize: "2rem" }}
+      >
         Join thousands of professionals who already use Exponent Practice to ace
         their job interviews
       </Header>
@@ -55,8 +58,26 @@ const FeedbackSection = () => {
         ))}
       </Grid>
       <Box display="flex" justifyContent="center" marginTop={4}>
-        <Button variant="contained" onClick={showMoreFeedback}>
-          Show More Feedback
+        <Button
+          variant="contained"
+          onClick={showMoreFeedback}
+          sx={{
+            textTransform: "none",
+            fontSize: "1rem",
+            padding: "1rem 2rem",
+            boxShadow: "none",
+            border: "1px solid #0176d3",
+            backgroundColor: "white",
+            color: "#0176d3 ",
+            "&:hover": {
+              border: "1px solid #003366",
+              color: "#003366",
+              backgroundColor: "white",
+              boxShadow: "none",
+            },
+          }}
+        >
+          Show More Feedbacks
         </Button>
       </Box>
     </Container>

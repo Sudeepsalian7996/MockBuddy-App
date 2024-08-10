@@ -3,11 +3,9 @@ import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
 
 export const StyledCard = styled(Card)`
-  // display: flex;
-  // align-items: center;
   margin-bottom: 16px;
   padding: 2rem;
-  height: 350px;
+  height: 380px;
   flex-direction: column;
   overflow: hidden;
   @media (min-width: 600px) {
