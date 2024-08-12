@@ -7,7 +7,14 @@ import whySectionImg from "assets/images/whyPracticeSection.webp";
 import { PracticeButton } from "pages/HomePage/HeroSection/HeroSectionStyles";
 const WhyPracticeSection = () => {
   return (
-    <Container sx={{ display: "flex", gap: "2rem", marginTop: "4rem" }}>
+    <Container
+      sx={{
+        display: "flex",
+        gap: "2rem",
+        marginTop: "4rem",
+        flexDirection: { xs: "column", md: "row" },
+      }}
+    >
       <Box>
         <Typography
           sx={{
@@ -63,7 +70,7 @@ const WhyPracticeSection = () => {
         component="img"
         src={whySectionImg}
         alt="Why Practice Section"
-        sx={{ width: "50%" }}
+        sx={{ width: { xs: "100%", md: "50%" } }}
       ></Box>
     </Container>
   );

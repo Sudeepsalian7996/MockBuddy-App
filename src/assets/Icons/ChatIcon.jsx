@@ -7,7 +7,11 @@ const ChatIcon = () => {
       component="svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      sx={{ color: "blue", width: 30, height: 30 }} // Change color here
+      sx={{
+        color: "blue",
+        width: { xs: 50, sm: 30 },
+        height: { xs: 50, sm: 30 },
+      }} // Change color here
     >
       <path
         fill-rule="evenodd"

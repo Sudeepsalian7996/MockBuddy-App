@@ -152,6 +152,10 @@ export const PracticeButton = styled.button`
     section === "whyPractice" &&
     `
     margin-top: 1.75rem;
+    @media (max-width:900px) {
+    display:flex;
+    margin:auto;
+    }
   `}
   &:hover {
     background-color: #11578f;

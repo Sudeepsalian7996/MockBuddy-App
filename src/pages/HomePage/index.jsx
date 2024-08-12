@@ -3,6 +3,7 @@ import HeroSection from "pages/HomePage/HeroSection/HeroSection";
 import FeedbackSection from "pages/HomePage/FeedbackSection/FeedbackSection";
 import PracticeInfoSection from "pages/HomePage/PracticeInfoSection";
 import WhyPracticeSection from "pages/HomePage/WhyPracticeSection";
+import Footer from "components/Footer";
 
 const HomePage = () => {
   return (
