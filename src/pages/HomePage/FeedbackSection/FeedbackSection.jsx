@@ -40,7 +40,12 @@ const FeedbackSection = () => {
     <Container>
       <Header
         variant="h5"
-        sx={{ width: "70%", margin: "2rem auto", fontSize: "2rem" }}
+        sx={{
+          width: "70%",
+          margin: "0rem auto",
+          marginTop: "7rem",
+          fontSize: "2rem",
+        }}
       >
         Join thousands of professionals who already use Exponent Practice to ace
         their job interviews

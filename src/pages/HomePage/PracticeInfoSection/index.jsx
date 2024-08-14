@@ -38,7 +38,7 @@ const PracticeInfoSection = () => {
         sx={{
           fontWeight: "bold",
           textAlign: "center",
-          marginTop: "4rem",
+          marginTop: { xs: "4rem", md: "7rem" },
           marginBottom: "2rem",
           fontSize: "2rem",
         }}

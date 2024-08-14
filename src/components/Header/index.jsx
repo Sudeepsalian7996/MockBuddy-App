@@ -18,6 +18,8 @@ const pages = [
   { name: "Interview Types", type: "dropdown" },
   { name: "Faq", type: "button" },
   { name: "Feedback", type: "button" },
+  { name: "Blog", type: "button" },
+  { name: "Pricing", type: "button" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -55,7 +57,10 @@ const Headers = () => {
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
-          sx={{ justifyContent: { md: "space-between", xs: "space-between" } }}
+          sx={{
+            justifyContent: { md: "space-between", xs: "space-between" },
+            gap: { lg: "12rem" },
+          }}
         >
           {window.screen.width > 900 && (
             <LogoWrapper>
@@ -158,8 +163,7 @@ const Headers = () => {
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-              gap: "4.5rem",
+              justifyContent: "space-evenly",
             }}
           >
             {pages.map((page, index) => (

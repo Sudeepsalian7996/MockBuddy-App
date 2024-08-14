@@ -11,7 +11,7 @@ const WhyPracticeSection = () => {
       sx={{
         display: "flex",
         gap: "2rem",
-        marginTop: "4rem",
+        marginTop: { xs: "4rem", md: "7rem" },
         flexDirection: { xs: "column", md: "row" },
       }}
     >

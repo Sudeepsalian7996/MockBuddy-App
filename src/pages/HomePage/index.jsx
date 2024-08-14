@@ -3,15 +3,16 @@ import HeroSection from "pages/HomePage/HeroSection/HeroSection";
 import FeedbackSection from "pages/HomePage/FeedbackSection/FeedbackSection";
 import PracticeInfoSection from "pages/HomePage/PracticeInfoSection";
 import WhyPracticeSection from "pages/HomePage/WhyPracticeSection";
-import Footer from "components/Footer";
+import WhoCanUseSection from "pages/HomePage/WhoCanUseSection";
 
 const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <FeedbackSection />
-      <WhyPracticeSection />
+      <WhoCanUseSection />
       <PracticeInfoSection />
+      <WhyPracticeSection />
+      <FeedbackSection />
     </>
   );
 };
