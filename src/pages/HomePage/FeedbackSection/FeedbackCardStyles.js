@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 export const StyledCard = styled(Card)`
   margin-bottom: 16px;
   padding: 2rem;
-  height: 380px;
+  height: 350px;
   flex-direction: column;
   overflow: hidden;
   @media (min-width: 600px) {

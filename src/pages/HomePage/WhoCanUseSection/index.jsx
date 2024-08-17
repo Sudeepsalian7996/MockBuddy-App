@@ -42,9 +42,9 @@ const WhoCanUseSection = () => {
         <Typography
           sx={{ fontSize: "1.1rem", color: "#4B5563", lineHeight: "1.8rem" }}
         >
-          Exponent Practice supports interview prep for everyone in tech. From
-          product management to software engineering and data roles, there are
-          thousands of practice questions to choose from.
+          MockBuddy supports interview prep for everyone in tech. From product
+          management to software engineering and data roles, there are thousands
+          of practice questions to choose from.
         </Typography>
       </Box>
     </Container>

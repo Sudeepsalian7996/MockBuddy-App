@@ -37,10 +37,10 @@ const RealInterviewPractice = () => {
         <Typography
           sx={{ fontSize: "1.1rem", color: "#4B5563", lineHeight: "1.8rem" }}
         >
-          Exponent Practice aims to provide the complete tech interview practice
-          you need, for free. Hone your interviewing skills, learn from your
-          peers, and become comfortable performing under pressure within an
-          interview setting.
+          MockBuddy aims to provide the complete tech interview practice you
+          need, for free. Hone your interviewing skills, learn from your peers,
+          and become comfortable performing under pressure within an interview
+          setting.
         </Typography>
       </Box>
       <Box

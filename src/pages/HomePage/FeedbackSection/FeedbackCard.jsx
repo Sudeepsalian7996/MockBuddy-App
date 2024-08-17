@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import { StyledCard, UserAvatar, InfoWrapper } from "./FeedbackCardStyles";
 
-const FeedbackCard = ({ name, rating, image, description }) => {
+const FeedbackCard = ({ name, rating, image, date, description }) => {
   const navigate = useNavigate();
   return (
     <StyledCard
@@ -46,7 +47,7 @@ const FeedbackCard = ({ name, rating, image, description }) => {
         component="div"
         sx={{ color: "grey", fontWeight: 500, marginTop: "1.25rem" }}
       >
-        02 Monday 2023
+        {moment(date, "DD-MM-YYYY").format("DD dddd YYYY")}
       </Typography>
     </StyledCard>
   );

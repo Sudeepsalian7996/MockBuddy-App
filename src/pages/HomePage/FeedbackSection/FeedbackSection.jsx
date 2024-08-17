@@ -7,24 +7,28 @@ import { Header } from "./FeedbackSectionStyles";
 import FeedbackCard from "pages/HomePage/FeedbackSection/FeedbackCard";
 const feedbacks = [
   {
-    name: "John Doe",
+    name: "Vinod Bhoomin",
     rating: 5,
     image: "path/to/image1.jpg",
+    date: "01-05-2024",
     description:
-      "customer relationship management (CRM) platform. We help your marketing, sales, commerce, service and IT teams work as one from anywhere — so you can keep your customers happy everywhere.",
+      "MockBuddy peer-to-peer mock interviews sessions were everything I needed in one place to get my dream PM job.",
   },
   {
     name: "Jane Smith",
     rating: 4,
     image: "path/to/image2.jpg",
-    description: "Helped me ace my interview.",
+    date: "21-03-2024",
+    description:
+      "Nothing beats mock coding interviews. I wasn't nervous on the day of my interviews and got offers from Google and Microsoft.",
   },
   {
     name: "Emily Davis",
     rating: 4,
     image: "path/to/image4.jpg",
+    date: "17-07-2024",
     description:
-      "customer relationship so you can keep your customers happy everywhere..",
+      "I truly benefited from the mock interview practice sessions. MockBuddy gave me everything I needed to succeed.",
   },
   // Add more feedback objects as needed
 ];
@@ -47,8 +51,8 @@ const FeedbackSection = () => {
           fontSize: "2rem",
         }}
       >
-        Join thousands of professionals who already use Exponent Practice to ace
-        their job interviews
+        Join thousands of candidates using MockBuddy to practice and land their
+        dream jobs.
       </Header>
       <Grid container spacing={2}>
         {feedbacks.slice(0, visibleFeedbacks).map((feedback, index) => (
@@ -57,6 +61,7 @@ const FeedbackSection = () => {
               name={feedback.name}
               rating={feedback.rating}
               image={feedback.image}
+              date={feedback.date}
               description={feedback.description}
             />
           </Grid>

@@ -69,13 +69,14 @@ export const CustomArrow = styled.button`
 
 export const TextCard = styled.div`
   .banner-title {
-    font-size: 4rem;
+    font-size: 2rem;
     margin-bottom: 1.7rem;
     font-weight: 700;
   }
   .banner-description {
     font-size: 1.2rem;
     margin-bottom: 1.7rem;
+    line-height: 1.8rem;
   }
 
   @media (min-width: 900px) {
@@ -91,16 +92,11 @@ export const TextCard = styled.div`
     padding: 1rem;
     border-radius: 0.7rem;
 
-    .banner-title {
-      margin: 0;
-      font-size: 3rem;
-      text-align:center
-    }
-
     .banner-description {
       font-size: 1rem;
       margin: 0;
       color: "#4B5563";
+      
     }
 
     @media (min-width:1275px){
@@ -125,6 +121,11 @@ export const TextCard = styled.div`
   @media (min-width:1400px) {
   .banner-description {
          width: 80%;
+    }
+         
+   .banner-title {
+      margin: 0;
+      font-size: 3rem;
     }
   }
 `;

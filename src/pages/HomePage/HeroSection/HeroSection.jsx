@@ -11,28 +11,28 @@ import {
 } from "pages/HomePage/HeroSection/HeroSectionStyles";
 import img from "assets/images/mockBanner.jpg";
 import bannerBgImage from "assets/images/bannerBgImage.webp";
-import video from "assets/videos/video.mp4";
+import video from "assets/videos/HeroSectionVideoSlide1.mp4";
 import { IconButton, Box } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const bannerDetail = [
   {
-    title: "Meet Surface Pro",
+    title: "Ace Your Tech Interviews with Real-Time Practice",
     Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur nec eros nulla. Aliquam erat volutpat.",
+      "Connect with aspiring tech professionals and sharpen your interview skills. Practice live coding challenges, solve real-world problems, and receive valuable feedback—all in a supportive online community.",
     bannerImg: img,
   },
   {
-    title: "Meet Surface Pro",
+    title: "Master the Art of Interviewing with Peer Practice",
     Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur nec eros nulla. Aliquam erat volutpat.",
+      " Elevate your tech interview game by collaborating with fellow candidates. Engage in realistic interview scenarios, enhance your confidence, sharpen your skills, and get personalized insights to land your dream job.",
     bannerImg: img,
   },
   {
-    title: "Meet Surface Pro",
+    title: "Get Ready for Tech Interviews with Real-World Practice",
     Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur nec eros nulla. Aliquam erat volutpat.",
+      "Prepare for your next big interview by practicing with peers. Tackle genuine interview questions, enhance your problem-solving abilities, and build the confidence to succeed, all in a dynamic and interactive setting.",
     bannerImg: img,
   },
 ];
