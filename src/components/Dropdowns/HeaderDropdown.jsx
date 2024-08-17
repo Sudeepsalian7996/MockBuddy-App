@@ -8,7 +8,6 @@ import {
   DropdownItem,
   IconWrapper,
 } from "./HeaderDropdownStyle";
-import { Padding } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
 const HeaderDropdown = ({ items, name }) => {
@@ -52,7 +51,13 @@ const HeaderDropdown = ({ items, name }) => {
     >
       <DropdownButton onClick={handleButtonClick}>
         <IconWrapper>
-          <Box sx={{ fontSize: { xs: "1.1rem", md: "1rem" } }}>{name}</Box>
+          <Box
+            sx={{
+              fontSize: { xs: "1.1rem", md: "1rem" },
+            }}
+          >
+            {name}
+          </Box>
           <Box>{isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}</Box>
         </IconWrapper>
       </DropdownButton>

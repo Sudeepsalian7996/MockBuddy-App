@@ -14,6 +14,7 @@ const fadeIn = keyframes`
 export const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
+
   ${({ isMobile }) =>
     isMobile &&
     `

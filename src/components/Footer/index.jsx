@@ -1,4 +1,4 @@
-import { Box, colors, Grid, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import {
   Instagram,
@@ -8,6 +8,27 @@ import {
   Facebook,
 } from "@mui/icons-material";
 import MockLogo from "assets/Icons/MockLogo";
+
+const socialMediaLinks = [
+  { icon: Instagram, url: "https://www.instagram.com", label: "Instagram" },
+  { icon: Twitter, url: "https://www.twitter.com", label: "Twitter" },
+  { icon: Facebook, url: "https://www.facebook.com", label: "Facebook" },
+  { icon: LinkedIn, url: "https://www.linkedin.com", label: "LinkedIn" },
+  { icon: YouTube, url: "https://www.youtube.com", label: "YouTube" },
+];
+
+const SocialMediaIcon = ({ icon: Icon, url, label }) => (
+  <IconButton
+    component="a"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+    sx={{ color: "white" }}
+  >
+    <Icon />
+  </IconButton>
+);
 
 const Footer = () => {
   return (
@@ -36,8 +57,6 @@ const Footer = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: "flex",
@@ -87,11 +106,14 @@ const Footer = () => {
       {/* Social Media Icons Section */}
       <Grid item xs={12} sm={4} md={3}>
         <Box display="flex" justifyContent="center" gap="1rem" flexWrap="wrap">
-          <Instagram />
-          <Twitter />
-          <Facebook />
-          <LinkedIn />
-          <YouTube />
+          {socialMediaLinks.map((social, index) => (
+            <SocialMediaIcon
+              key={index}
+              icon={social.icon}
+              url={social.url}
+              label={social.label}
+            />
+          ))}
         </Box>
       </Grid>
     </Grid>

@@ -16,9 +16,10 @@ import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
 import { LogoWrapper } from "components/Header/headerStyles";
 import MockBuddyLogo from "assets/images/mocklogo.svg";
 import HeaderDropdown from "components/Dropdowns/HeaderDropdown";
+import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Interview Types", type: "dropdown" },
+  { name: "Questions", type: "button" },
   { name: "Faq", type: "button" },
   { name: "Feedback", type: "button" },
   { name: "Blog", type: "button" },
@@ -56,7 +57,14 @@ const Headers = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "white", color: "black" }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: "white",
+        color: "black",
+        padding: { md: " 0.5rem 1.5rem" },
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -66,27 +74,27 @@ const Headers = () => {
           }}
         >
           {window.screen.width > 900 && (
-            <LogoWrapper>
-              <img src={MockBuddyLogo} className="header-logo" alt="logo" />
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                  fontSize: "1.75rem",
-                }}
-              >
-                MOCKBUDDY
-              </Typography>
-            </LogoWrapper>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <LogoWrapper>
+                <img src={MockBuddyLogo} className="header-logo" alt="logo" />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  sx={{
+                    mr: 2,
+                    display: { xs: "none", md: "flex" },
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                    fontSize: "1.75rem",
+                  }}
+                >
+                  MOCKBUDDY
+                </Typography>
+              </LogoWrapper>
+            </Link>
           )}
 
           <Box sx={{ display: { md: "none" } }}>
@@ -114,8 +122,6 @@ const Headers = () => {
                   <Typography
                     variant="h5"
                     noWrap
-                    component="a"
-                    href="#app-bar-with-responsive-menu"
                     sx={{
                       mr: 2,
                       display: { xs: "flex", md: "none" },
@@ -165,7 +171,7 @@ const Headers = () => {
                       sx={{
                         color: "black",
                         fontSize: "1.1rem",
-                        fontWeight: 400,
+                        fontWeight: 500,
                       }}
                     >
                       {page.type === "dropdown" ? (
@@ -184,28 +190,28 @@ const Headers = () => {
             </Drawer>
           </Box>
           {window.screen.width <= 900 && (
-            <LogoWrapper mobile={true}>
-              <img src={MockBuddyLogo} className="header-logo" alt="logo" />
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="#app-bar-with-responsive-menu"
-                sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  flexGrow: 1,
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                  fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-                }}
-              >
-                MOCKBUDDY
-              </Typography>
-            </LogoWrapper>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <LogoWrapper mobile={true}>
+                <img src={MockBuddyLogo} className="header-logo" alt="logo" />
+                <Typography
+                  variant="h5"
+                  noWrap
+                  sx={{
+                    mr: 2,
+                    display: { xs: "flex", md: "none" },
+                    flexGrow: 1,
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                    fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                  }}
+                >
+                  MOCKBUDDY
+                </Typography>
+              </LogoWrapper>
+            </Link>
           )}
           <Box
             sx={{
@@ -219,7 +225,20 @@ const Headers = () => {
                 key={index}
                 onClick={page.type === "button" ? handleCloseNavMenu : null}
               >
-                <Typography textAlign="center" sx={{ color: "black" }}>
+                <Typography
+                  textAlign="center"
+                  sx={{
+                    color: "black",
+                    fontSize: "1.1rem",
+                    fontWeight: 500,
+                    transition:
+                      "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
+                    "&:hover": {
+                      opacity: 0.7,
+                      transform: "scale(1.10)",
+                    },
+                  }}
+                >
                   {page.type === "dropdown" ? (
                     <HeaderDropdown
                       name={page.name}
