@@ -21,7 +21,7 @@ export const DropdownContainer = styled.div`
   `}
 `;
 
-export const DropdownButton = styled.button`
+export const DropdownButton = styled.div`
   color: black;
   padding: 12px;
   font-size: 16px;

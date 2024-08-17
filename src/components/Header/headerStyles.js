@@ -8,7 +8,7 @@ export const LogoWrapper = styled.div`
   left: ${({ mobile }) => (!mobile ? "4rem" : "0rem")};
 
   .header-logo {
-    width: 3.5rem;
+    width: ${({ mobile }) => (mobile ? "3rem" : "3.5rem")};
   }
 `;
 

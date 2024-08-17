@@ -1,15 +1,18 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Container,
+  Avatar,
+  Tooltip,
+  MenuItem,
+  Drawer,
+  Menu,
+} from "@mui/material";
+import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
 import { LogoWrapper } from "components/Header/headerStyles";
 import MockBuddyLogo from "assets/images/mocklogo.svg";
 import HeaderDropdown from "components/Dropdowns/HeaderDropdown";
@@ -27,21 +30,21 @@ const Headers = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
+  const handleOpenNavMenu = () => {
+    setAnchorElNav(true);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(false);
+  };
   const options = [
     { label: "Item 1", url: "/item1" },
     { label: "Item 2", url: "/item2" },
@@ -97,43 +100,88 @@ const Headers = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
+            <Drawer
+              anchor="left"
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
+              PaperProps={{
+                sx: { width: "80%", backgroundColor: "white", color: "black" },
               }}
             >
-              {pages.map((page, index) => (
-                <MenuItem
-                  key={index}
-                  onClick={page.type === "button" ? handleCloseNavMenu : null}
-                >
-                  <Typography textAlign="center" sx={{ color: "black" }}>
-                    {page.type === "dropdown" ? (
-                      <HeaderDropdown
-                        name={page.name}
-                        items={options}
-                        onSelect={handleSelect}
-                      />
-                    ) : (
-                      page.name
-                    )}
+              <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                <LogoWrapper mobile={true}>
+                  <img src={MockBuddyLogo} className="header-logo" alt="logo" />
+                  <Typography
+                    variant="h5"
+                    noWrap
+                    component="a"
+                    href="#app-bar-with-responsive-menu"
+                    sx={{
+                      mr: 2,
+                      display: { xs: "flex", md: "none" },
+                      flexGrow: 1,
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      letterSpacing: ".3rem",
+                      color: "inherit",
+                      textDecoration: "none",
+                      fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+                    }}
+                  >
+                    MOCKBUDDY
                   </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+                </LogoWrapper>
+                <IconButton
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    alignSelf: "flex-end",
+                    mb: 2,
+                    right: "0.75rem",
+                    top: "0.6rem",
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  gap: "1rem",
+                  height: "100%",
+                  p: 2,
+                }}
+              >
+                {pages.map((page, index) => (
+                  <MenuItem
+                    key={index}
+                    onClick={page.type === "button" ? handleCloseNavMenu : null}
+                    sx={{ width: "100%" }}
+                  >
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        color: "black",
+                        fontSize: "1.1rem",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {page.type === "dropdown" ? (
+                        <HeaderDropdown
+                          name={page.name}
+                          items={options}
+                          onSelect={handleSelect}
+                        />
+                      ) : (
+                        page.name
+                      )}
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Box>
+            </Drawer>
           </Box>
           {window.screen.width <= 900 && (
             <LogoWrapper mobile={true}>
