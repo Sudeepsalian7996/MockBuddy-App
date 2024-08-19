@@ -19,11 +19,11 @@ import HeaderDropdown from "components/Dropdowns/HeaderDropdown";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Questions", type: "button" },
-  { name: "Faq", type: "button" },
-  { name: "Feedback", type: "button" },
-  { name: "Blog", type: "button" },
-  { name: "Pricing", type: "button" },
+  { name: "Questions", type: "button", path: "/questions" },
+  { name: "FAQs", type: "button", path: "/faq" },
+  { name: "Feedback", type: "button", path: "/feedback" },
+  { name: "Blog", type: "button", path: "/blog" },
+  { name: "Pricing", type: "button", path: "/pricing" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -168,10 +168,13 @@ const Headers = () => {
                   >
                     <Typography
                       textAlign="center"
+                      component={Link}
+                      to={page.path}
                       sx={{
                         color: "black",
                         fontSize: "1.1rem",
                         fontWeight: 500,
+                        textDecoration: "none",
                       }}
                     >
                       {page.type === "dropdown" ? (
@@ -227,10 +230,13 @@ const Headers = () => {
               >
                 <Typography
                   textAlign="center"
+                  component={Link}
+                  to={page.path}
                   sx={{
                     color: "black",
                     fontSize: "1.1rem",
                     fontWeight: 500,
+                    textDecoration: "none",
                     transition:
                       "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
                     "&:hover": {
