@@ -5,4 +5,7 @@ export const USER_SCOPE_ROUTES = {
   faq: {
     basePath: "/faq",
   },
+  pricing: {
+    basePath: "/pricing",
+  },
 };

@@ -7,6 +7,7 @@ import { USER_SCOPE_ROUTES } from "./MenuList";
 const UserLayout = lazy(() => import("layouts/UserLayout"));
 const HomePage = lazy(() => import("pages/HomePage"));
 const Faq = lazy(() => import("pages/Faq"));
+const PricingPage = lazy(() => import("pages/PricingPage"));
 
 const authenticatedRoutes = [
   {
@@ -20,6 +21,10 @@ const authenticatedRoutes = [
       {
         path: USER_SCOPE_ROUTES.faq.basePath,
         element: LazyLoadComponent(<Faq />),
+      },
+      {
+        path: USER_SCOPE_ROUTES.pricing.basePath,
+        element: LazyLoadComponent(<PricingPage />),
       },
     ],
   },
