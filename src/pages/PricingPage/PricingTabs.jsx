@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Tabs, Tab, Typography } from "@mui/material";
 import TabPanel from "./TabPanel";
+import PricingCard from "pages/PricingPage/PricingCard";
 
 // Main PricingPage component
 const PricingTabs = () => {
@@ -21,64 +22,38 @@ const PricingTabs = () => {
       }}
     >
       <Tabs value={value} onChange={handleChange} aria-label="pricing tabs">
-        <Tab label="1 Month" />
-        <Tab label="3 Months" />
-        <Tab label="6 Months" />
-        <Tab label="Lifetime" />
+        <Tab label="Free" sx={{ textTransform: "none" }} />
+        <Tab label="1 Month" sx={{ textTransform: "none" }} />
+        <Tab label="3 Months" sx={{ textTransform: "none" }} />
+        <Tab label="1 Year" sx={{ textTransform: "none" }} />
       </Tabs>
 
       <TabPanel value={value} index={0}>
-        <Typography variant="h5">1 Month Plan</Typography>
-        <Typography>Access for 1 month</Typography>
-        <Typography>Price: $19.99</Typography>
-        <Typography>Features:</Typography>
-        <ul>
-          <li>Feature A</li>
-          <li>Feature B</li>
-          <li>Feature C</li>
-        </ul>
+        <Box sx={{ display: "flex", gap: "1.5rem" }}>
+          <PricingCard />
+        </Box>
       </TabPanel>
 
       <TabPanel value={value} index={1}>
-        <Typography variant="h5">3 Months Plan</Typography>
-        <Typography>Access for 3 months</Typography>
-        <Typography>Price: $49.99</Typography>
-        <Typography>Features:</Typography>
-        <ul>
-          <li>Feature A</li>
-          <li>Feature B</li>
-          <li>Feature C</li>
-          <li>Feature D</li>
-        </ul>
+        <Box sx={{ display: "flex", gap: "1.5rem" }}>
+          <PricingCard />
+          <PricingCard />
+        </Box>
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-        <Typography variant="h5">6 Months Plan</Typography>
-        <Typography>Access for 6 months</Typography>
-        <Typography>Price: $89.99</Typography>
-        <Typography>Features:</Typography>
-        <ul>
-          <li>Feature A</li>
-          <li>Feature B</li>
-          <li>Feature C</li>
-          <li>Feature D</li>
-          <li>Feature E</li>
-        </ul>
+        <Box sx={{ display: "flex", gap: "1.5rem" }}>
+          <PricingCard />
+          <PricingCard />
+          <PricingCard />
+        </Box>
       </TabPanel>
 
       <TabPanel value={value} index={3}>
-        <Typography variant="h5">Lifetime Plan</Typography>
-        <Typography>Lifetime access</Typography>
-        <Typography>Price: $199.99</Typography>
-        <Typography>Features:</Typography>
-        <ul>
-          <li>Feature A</li>
-          <li>Feature B</li>
-          <li>Feature C</li>
-          <li>Feature D</li>
-          <li>Feature E</li>
-          <li>Feature F</li>
-        </ul>
+        <Box sx={{ display: "flex", gap: "1.5rem" }}>
+          <PricingCard />
+          <PricingCard />
+        </Box>
       </TabPanel>
     </Box>
   );
