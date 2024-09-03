@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Tabs, Tab, Typography } from "@mui/material";
 import TabPanel from "./TabPanel";
 import PricingCard from "pages/PricingPage/PricingCard";
+import { pricingData } from "./PricingData";
 
 // Main PricingPage component
 const PricingTabs = () => {
@@ -27,34 +28,22 @@ const PricingTabs = () => {
         <Tab label="3 Months" sx={{ textTransform: "none" }} />
         <Tab label="1 Year" sx={{ textTransform: "none" }} />
       </Tabs>
-
-      <TabPanel value={value} index={0}>
-        <Box sx={{ display: "flex", gap: "1.5rem" }}>
-          <PricingCard />
-        </Box>
-      </TabPanel>
-
-      <TabPanel value={value} index={1}>
-        <Box sx={{ display: "flex", gap: "1.5rem" }}>
-          <PricingCard />
-          <PricingCard />
-        </Box>
-      </TabPanel>
-
-      <TabPanel value={value} index={2}>
-        <Box sx={{ display: "flex", gap: "1.5rem" }}>
-          <PricingCard />
-          <PricingCard />
-          <PricingCard />
-        </Box>
-      </TabPanel>
-
-      <TabPanel value={value} index={3}>
-        <Box sx={{ display: "flex", gap: "1.5rem" }}>
-          <PricingCard />
-          <PricingCard />
-        </Box>
-      </TabPanel>
+      {pricingData.map((cardData, index) => (
+        <TabPanel value={value} index={index}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "1.5rem",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {cardData.map((data, index) => (
+              <PricingCard data={data} index={index} />
+            ))}
+          </Box>
+        </TabPanel>
+      ))}
     </Box>
   );
 };

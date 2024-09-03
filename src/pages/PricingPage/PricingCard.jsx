@@ -10,17 +10,19 @@ import {
   Typography,
 } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
+import { CurrencyRupee } from "@mui/icons-material";
 import React from "react";
 import MockBuddyLogo from "assets/images/mocklogo.svg";
 
-const PricingCard = () => {
+const PricingCard = ({ data, index }) => {
   return (
     <Container
       sx={{
+        width: { sm: "352px" },
         boxShadow:
           "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
         borderRadius: "0.5rem",
-        padding: "2rem",
+        padding: { xs: "1rem", sm: "2rem" },
         position: "relative",
       }}
     >
@@ -29,16 +31,27 @@ const PricingCard = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          background: "#a5bbd1",
+          background:
+            data.badge === "Free"
+              ? "#2eb281"
+              : data.badge === "Plus"
+              ? "#53b0da"
+              : data.badge === "Elite"
+              ? "#c6acae"
+              : data.badge === "Pro"
+              ? "#c1b658"
+              : "black",
           borderRadius: "0.5rem 0px",
           width: "50%",
-          height: "6%",
+          height: "7%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontWeight: "700" }}>Elite</Typography>
+        <Typography sx={{ fontWeight: "700", color: "white" }}>
+          {data.badge}
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -55,89 +68,44 @@ const PricingCard = () => {
       <Typography
         sx={{ fontWeight: "bold", fontSize: "2rem", color: "#262f37" }}
       >
-        Professional
+        {data.type}
       </Typography>
-      <Typography sx={{ margin: "0.5rem 0rem", fontWeight: 500 }}>
-        $19 for 2 months
+      <Typography
+        sx={{ margin: "0.5rem 0rem", fontWeight: 500, display: "flex" }}
+      >
+        {data.price > 0 ? (
+          <>
+            <CurrencyRupee sx={{ width: "1.1rem" }} />
+            {data.price}
+          </>
+        ) : (
+          "Free"
+        )}{" "}
+        for {data.duration}
       </Typography>
       <Divider sx={{ marginTop: "1.5rem" }} />
       <List>
-        <ListItem sx={{ position: "relative", paddingTop: 0 }}>
-          <ListItemIcon
-            sx={{
-              minWidth: "auto",
-              marginRight: 1,
-            }}
-          >
-            <CircleIcon
+        {data.description.map((desc, index) => (
+          <ListItem sx={{ position: "relative", paddingTop: 0 }}>
+            <ListItemIcon
               sx={{
-                color: "black",
-                fontSize: "0.5rem",
-                position: "absolute",
-                top: "12px",
-                left: "0",
+                minWidth: "auto",
+                marginRight: 1,
               }}
-            />
-          </ListItemIcon>
-          <ListItemText primary="Practice for internships and entry roles." />
-        </ListItem>
-        <ListItem sx={{ position: "relative", paddingTop: 0 }}>
-          <ListItemIcon
-            sx={{
-              minWidth: "auto",
-              marginRight: 1,
-            }}
-          >
-            <CircleIcon
-              sx={{
-                color: "black",
-                fontSize: "0.5rem",
-                position: "absolute",
-                top: "12px",
-                left: "0",
-              }}
-            />
-          </ListItemIcon>
-          <ListItemText primary="Practice for and entry roles." />
-        </ListItem>
-        <ListItem sx={{ position: "relative", paddingTop: 0 }}>
-          <ListItemIcon
-            sx={{
-              minWidth: "auto",
-              marginRight: 1,
-            }}
-          >
-            <CircleIcon
-              sx={{
-                color: "black",
-                fontSize: "0.5rem",
-                position: "absolute",
-                top: "12px",
-                left: "0",
-              }}
-            />
-          </ListItemIcon>
-          <ListItemText primary="Practice for internships and entry roles.Practice for and entry roles with ships" />
-        </ListItem>
-        <ListItem sx={{ position: "relative", paddingTop: 0 }}>
-          <ListItemIcon
-            sx={{
-              minWidth: "auto",
-              marginRight: 1,
-            }}
-          >
-            <CircleIcon
-              sx={{
-                color: "black",
-                fontSize: "0.5rem",
-                position: "absolute",
-                top: "12px",
-                left: "0",
-              }}
-            />
-          </ListItemIcon>
-          <ListItemText primary="Practice for internships and entry roles." />
-        </ListItem>
+            >
+              <CircleIcon
+                sx={{
+                  color: "black",
+                  fontSize: "0.5rem",
+                  position: "absolute",
+                  top: "12px",
+                  left: "0",
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText primary={desc} tabIndex={index} />
+          </ListItem>
+        ))}
       </List>
       <Box
         sx={{
@@ -152,16 +120,35 @@ const PricingCard = () => {
             marginBottom: "1rem",
             color: "white",
             fontSize: "1rem",
-            background: "#a5bbd1 !important",
+            background:
+              data.badge === "Free"
+                ? "#2eb281"
+                : data.badge === "Plus"
+                ? "#53b0da"
+                : data.badge === "Elite"
+                ? "#c6acae"
+                : data.badge === "Pro"
+                ? "#c1b658"
+                : "white",
             fontWeight: 600,
             borderRadius: "2rem",
+            transition: "0.3s background",
 
             "&:hover": {
-              opacity: "0.8",
+              background:
+                data.badge === "Free"
+                  ? "#279973"
+                  : data.badge === "Plus"
+                  ? "#4a9ecb"
+                  : data.badge === "Elite"
+                  ? "#b09a9c"
+                  : data.badge === "Pro"
+                  ? "#b1a14e"
+                  : "gray",
             },
           }}
         >
-          Get Premium Individual
+          {data.price > 0 ? "Get Premium" : "Start for Free"}
         </Button>
       </Box>
       <Typography
@@ -172,8 +159,7 @@ const PricingCard = () => {
           textAlign: "center",
         }}
       >
-        For students preparing for internships or entry-level jobs.students
-        preparing for internships or entry-level jobs
+        {data.shortDescription}
       </Typography>
     </Container>
   );
