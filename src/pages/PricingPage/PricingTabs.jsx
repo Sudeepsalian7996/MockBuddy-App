@@ -6,7 +6,7 @@ import { pricingData } from "./PricingData";
 
 // Main PricingPage component
 const PricingTabs = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

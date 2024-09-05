@@ -134,3 +134,42 @@ export const pricingData = [
     },
   ],
 ];
+
+export const premiumFeatures = [
+  {
+    badge: "Exclusive Content",
+    title: "Advanced Learning Resources Guide",
+    description:
+      "Unlock exclusive content and materials designed to deepen your skills and enhance your knowledge for long-term success.",
+  },
+  {
+    badge: "Fast Support",
+    title: "Priority Customer Support Access",
+    description:
+      "Enjoy faster response times and personalized assistance, ensuring a seamless and hassle-free experience.",
+  },
+  {
+    badge: "Expert Guidance",
+    title: "Direct Access to Expert Mentors",
+    description:
+      "Connect with mentors and industry professionals who offer guidance to help you achieve your career aspirations.",
+  },
+  {
+    badge: "Networking Opportunities",
+    title: "Exclusive Events Access",
+    description:
+      "Participate in events that connect you with industry leaders, broadening your professional network and career prospects.",
+  },
+  {
+    badge: "Career Boost",
+    title: "Expert Resume Assistance Service",
+    description:
+      "Receive tailored resume and job preparation support to help you stand out in the competitive job market.",
+  },
+  {
+    badge: "Lifetime Access",
+    title: "Lifetime Premium Features Access",
+    description:
+      "Secure continuous access to premium features and support, ensuring your professional growth for years to come.",
+  },
+];
