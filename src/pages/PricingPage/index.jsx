@@ -3,6 +3,7 @@ import { Box, Container, Typography, Grid } from "@mui/material";
 import PricingTabs from "./PricingTabs";
 import PricingFeatureCard from "./PricingFeatureCard";
 import { premiumFeatures } from "./PricingData";
+import PricingFaqs from "./PricingFaqs";
 
 const PricingPage = () => {
   return (
@@ -49,6 +50,7 @@ const PricingPage = () => {
           ))}
         </Grid>
       </Box>
+      <PricingFaqs />
     </Container>
   );
 };

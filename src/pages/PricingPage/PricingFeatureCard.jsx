@@ -43,9 +43,9 @@ const PricingFeatureCard = ({ feature, index }) => {
             <ExpandMoreIcon
               sx={{
                 borderRadius: "50%",
-                background: "#d6d6d6",
+                background: "#e0e0e0",
                 padding: "0.25rem",
-                fontSize: "1.5rem",
+                fontSize: "2rem",
               }}
             />
           }
