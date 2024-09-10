@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, Container, Typography, Grid } from "@mui/material";
-import PricingTabs from "./PricingTabs";
-import PricingFeatureCard from "./PricingFeatureCard";
-import { premiumFeatures } from "./PricingData";
-import PricingFaqs from "./PricingFaqs";
+import PricingTabs from "pages/PricingPage/PremiumPricingSection/PricingTabs";
+import PricingFeatureCard from "pages/PricingPage/PricingFeatures/PricingFeatureCard";
+import { premiumFeatures } from "pages/PricingPage/PricingData";
+import PricingFaqs from "pages/PricingPage/PricingFaqs/PricingFaqs";
+import PricingFeedbackSection from "pages/PricingPage/PricingFeedbackSection";
 
 const PricingPage = () => {
   return (
@@ -51,6 +52,7 @@ const PricingPage = () => {
         </Grid>
       </Box>
       <PricingFaqs />
+      <PricingFeedbackSection />
     </Container>
   );
 };

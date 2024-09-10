@@ -5,7 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-import { StyledCard, UserAvatar, InfoWrapper } from "./FeedbackCardStyles";
+import {
+  StyledCard,
+  UserAvatar,
+  InfoWrapper,
+} from "pages/HomePage/FeedbackSection/FeedbackCardStyles";
 
 const FeedbackCard = ({ name, rating, image, date, description }) => {
   const navigate = useNavigate();
@@ -21,7 +25,9 @@ const FeedbackCard = ({ name, rating, image, date, description }) => {
       <InfoWrapper>
         <UserAvatar src={image} alt={name} />
         <CardContent>
-          <Typography variant="h6">{name}</Typography>
+          <Typography variant="h6" sx={{ marginTop: "1rem" }}>
+            {name}
+          </Typography>
           <Box display="flex" alignItems="center" mb={1}>
             <Rating value={rating} readOnly />
           </Box>

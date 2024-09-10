@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Box, Tabs, Tab, Typography } from "@mui/material";
+import { Box, Tabs, Tab } from "@mui/material";
 import TabPanel from "./TabPanel";
-import PricingCard from "pages/PricingPage/PricingCard";
-import { pricingData } from "./PricingData";
+import PricingCard from "pages/PricingPage/PremiumPricingSection/PricingCard";
+import { pricingData } from "pages/PricingPage/PricingData";
 
 // Main PricingPage component
 const PricingTabs = () => {

@@ -1,10 +1,5 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import {
-  StyledCard,
-  UserAvatar,
-  InfoWrapper,
-} from "pages/HomePage/FeedbackSection/FeedbackCardStyles";
 import { Avatar, Box } from "@mui/material";
 
 const HowItWorksCard = ({ title, image, description }) => {

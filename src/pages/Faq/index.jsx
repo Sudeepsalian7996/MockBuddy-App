@@ -43,7 +43,7 @@ const Faqs = () => {
           color: "grey",
         }}
       >
-        If you're new to mockbuddy, this section will help you learn more about
+        If you're new to MockBuddy, this section will help you learn more about
         the platform and its features.
       </Typography>
       <Box sx={{ margin: { md: "1.5rem 6rem" } }}>
