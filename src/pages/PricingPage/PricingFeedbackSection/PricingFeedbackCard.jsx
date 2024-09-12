@@ -4,11 +4,11 @@ import {
   UserAvatar,
   InfoWrapper,
 } from "pages/HomePage/FeedbackSection/FeedbackCardStyles";
-import { Box, Typography, CardContent } from "@mui/material";
+import { Box, Typography, CardContent, Container } from "@mui/material";
 
 const PricingFeedbackCard = ({ feedback }) => {
   return (
-    <StyledCard>
+    <Container>
       <InfoWrapper>
         <UserAvatar src={feedback.image} alt={feedback.name} />
         <CardContent>
@@ -36,7 +36,7 @@ const PricingFeedbackCard = ({ feedback }) => {
       >
         {feedback.description}
       </Typography>
-    </StyledCard>
+    </Container>
   );
 };
 

@@ -5,28 +5,60 @@ import "slick-carousel/slick/slick-theme.css";
 import { feedbackData } from "pages/PricingPage/PricingFeedbackSection/FeedbackData";
 import { SliderContainer } from "pages/HomePage/HeroSection/HeroSectionStyles";
 import PricingFeedbackCard from "./PricingFeedbackCard";
+import { Typography } from "@mui/material";
 const PricingFeedback = () => {
   const sliderRef = useRef(null);
 
   const settings = {
-    dots: false, // No navigation dots
-    infinite: true, // Infinite loop sliding
-    speed: 5000, // Slow motion transition speed (15 seconds)
-    slidesToShow: 4, // Number of slides to show at a time
-    slidesToScroll: 1, // Number of slides to scroll at a time
-    autoplay: true, // Enable automatic sliding
-    autoplaySpeed: 0, // Set to 0 for continuous sliding (no pause)
-    cssEase: "linear", // Smooth, linear motion
-    pauseOnHover: false, // Disable pausing when hovered
+    dots: false,
+    infinite: true,
+    speed: 15000,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
+    slidesToShow: 4, // default for large screens
+    responsive: [
+      {
+        breakpoint: 1200, // Laptops and large desktops
+        settings: {
+          slidesToShow: 3, // show 3 slides
+        },
+      },
+      {
+        breakpoint: 992, // Tablets and small laptops
+        settings: {
+          slidesToShow: 2, // show 2 slides
+        },
+      },
+      {
+        breakpoint: 500, // Mobile screens
+        settings: {
+          slidesToShow: 1, // show 1 slide
+        },
+      },
+    ],
   };
+
   return (
-    <SliderContainer>
+    <>
+      <Typography
+        sx={{
+          fontSize: "2rem",
+          fontWeight: 700,
+          textAlign: "center",
+          margin: "5rem 0 3rem 0",
+        }}
+      >
+        Customer Feedback on Career Plans
+      </Typography>
       <Slider {...settings} ref={sliderRef}>
         {feedbackData.map((feedback, index) => (
           <PricingFeedbackCard feedback={feedback} index={index} />
         ))}
       </Slider>
-    </SliderContainer>
+    </>
   );
 };
 
