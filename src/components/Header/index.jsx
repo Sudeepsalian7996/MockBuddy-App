@@ -22,7 +22,11 @@ const pages = [
   { name: "Questions", type: "button", path: "/questions" },
   { name: "FAQs", type: "button", path: "/faq" },
   { name: "Feedback", type: "button", path: "/feedback" },
-  { name: "Blog", type: "button", path: "/blog" },
+  {
+    name: "Blog",
+    type: "button",
+    path: "https://www.tryexponent.com/blog?src=nav",
+  },
   { name: "Pricing", type: "button", path: "/pricing" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
