@@ -13,7 +13,6 @@ const PricingFeatureCard = ({ feature, index }) => {
     <Box
       sx={{
         padding: "1.25rem",
-        backgroundColor: "#f5f5f5",
         borderRadius: 2,
         boxShadow:
           "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
@@ -43,7 +42,6 @@ const PricingFeatureCard = ({ feature, index }) => {
             <ExpandMoreIcon
               sx={{
                 borderRadius: "50%",
-                background: "#e0e0e0",
                 padding: "0.25rem",
                 fontSize: "2rem",
               }}
