@@ -17,6 +17,8 @@ import { LogoWrapper } from "components/Header/headerStyles";
 import MockBuddyLogo from "assets/images/mocklogo.svg";
 import HeaderDropdown from "components/Dropdowns/HeaderDropdown";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { login, logout } from "features/auth/authSlice";
 
 const pages = [
   { name: "Questions", type: "button", path: "/questions" },
@@ -35,6 +37,9 @@ const Headers = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  //Redux state
+  const loginInfo = useSelector((state) => state.auth);
+  console.log("loginInfo", loginInfo);
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -266,7 +271,7 @@ const Headers = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" />
+                {loginInfo.isAuthenticated && <Avatar alt="Remy Sharp" />}
               </IconButton>
             </Tooltip>
             <Menu
